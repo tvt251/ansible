@@ -1,0 +1,23 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: install apache2 and php packages on Ubuntu
+    package: #use default package manager in target OS
+      name:
+        - "{{ apache_package }}"
+        - "{{ php_package }}"
+      state: latest
+      update_cache: yes
+    when: ansible_distribution  == "Ubuntu"
+
+#  - name: install apache2 and php packages on CentOS
+#    yum:
+#      name:
+#        - "{{ apache_package }}"
+#        - "{{ php_package }}"
+#      state: latest
+#      update_cache: yes
+#    when: ansible_distribution  == "CentOS"
