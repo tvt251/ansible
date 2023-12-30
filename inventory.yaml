@@ -1,0 +1,12 @@
+web_servers:
+  hosts:
+    192.168.56.20:
+    192.168.56.21:
+
+db_servers:
+  hosts:
+    192.168.56.22:
+
+file_servers:
+  hosts:
+    192.168.56.1:
